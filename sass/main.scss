@@ -1,14 +1,22 @@
 @import 'fontawesome/fontawesome.scss';
 @import 'fontawesome/solid.scss';
 
+/** Utils **/
+@import 'utils/mixins';
+
+/** Base **/
 @import 'base/reset';
+@import 'base/typography';
 @import 'base/color';
 @import 'base/base';
 
 /** Components - UI **/
 @import 'components/ui/spinner';
+@import 'components/ui/button';
 
 /** Components **/
 @import 'components/header';
 @import 'components/footer';
 
+/** Pages **/
+@import 'pages/homepage';

@@ -1,0 +1,13 @@
+@mixin box-shadow(
+  $__inset: null,
+  $__horizontaloffset: 0px,
+  $__verticaloffset: 5px,
+  $blur: 15px,
+  $__spread: 0px,
+  $__color: rgba(0, 0, 0, 0.3)
+) {
+  -webkit-box-shadow: $__inset $__horizontaloffset $__verticaloffset $blur $__spread
+    $__color;
+  -moz-box-shadow: $__inset $__horizontaloffset $__verticaloffset $blur $__spread $__color;
+  box-shadow: $__inset $__horizontaloffset $__verticaloffset $blur $__spread $__color;
+}
