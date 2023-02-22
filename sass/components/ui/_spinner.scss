@@ -1,0 +1,94 @@
+.modal {
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+
+  position: absolute;
+
+  background-color: rgba(0, 0, 0, 0.2);
+
+  &--spinner {
+    font-size: 3rem;
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 3rem);
+    right: calc(50% - 1.5rem);
+    transform: translate(50%, -50%);
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    animation: loadingSpinner 1.5s 3 ease, rotate 1.5s 3 ease, 1s opacity 3.25s forwards;
+  }
+  animation: 1s closeModal 3.25s forwards;
+}
+
+@keyframes loadingSpinner {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em $__primary, 0 -0.83em 0 -0.42em $__secondary,
+      0 -0.83em 0 -0.44em $__tertiary, 0 -0.83em 0 -0.46em $__secondary,
+      0 -0.83em 0 -0.477em $__tertiary;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em $__primary, 0 -0.83em 0 -0.42em $__secondary,
+      0 -0.83em 0 -0.44em $__tertiary, 0 -0.83em 0 -0.46em $__secondary,
+      0 -0.83em 0 -0.477em $__tertiary;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em $__primary, -0.087em -0.825em 0 -0.42em $__secondary,
+      -0.173em -0.812em 0 -0.44em $__tertiary, -0.256em -0.789em 0 -0.46em $__secondary,
+      -0.297em -0.775em 0 -0.477em $__tertiary;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em $__primary, -0.338em -0.758em 0 -0.42em $__secondary,
+      -0.555em -0.617em 0 -0.44em $__tertiary, -0.671em -0.488em 0 -0.46em $__secondary,
+      -0.749em -0.34em 0 -0.477em $__tertiary;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em $__primary, -0.377em -0.74em 0 -0.42em $__secondary,
+      -0.645em -0.522em 0 -0.44em $__tertiary, -0.775em -0.297em 0 -0.46em $__secondary,
+      -0.82em -0.09em 0 -0.477em $__tertiary;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em $__primary, 0 -0.83em 0 -0.42em $__secondary,
+      0 -0.83em 0 -0.44em $__tertiary, 0 -0.83em 0 -0.46em $__secondary,
+      0 -0.83em 0 -0.477em $__tertiary;
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  to {
+    visibility: hidden;
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes closeModal {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+}
