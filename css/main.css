@@ -8536,6 +8536,9 @@ h1 {
 .footer--link {
   line-height: 1.75rem;
 }
+.footer--link a:hover {
+  text-decoration: underline;
+}
 .footer--link:nth-child(1)::before, .footer--link:nth-child(2)::before {
   margin-right: 0.75rem;
 }
