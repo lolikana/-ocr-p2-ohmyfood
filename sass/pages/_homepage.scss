@@ -110,3 +110,51 @@
     }
   }
 }
+
+.section--restaurants {
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  &-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &-card {
+    @include box-shadow($__horizontaloffset: 10px, $blur: 10px, $__spread: -10px);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .restaurants--card {
+      &-desc {
+        padding: 1.5rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-text {
+          h2,
+          p {
+            line-height: 2rem;
+          }
+
+          h2 {
+            font-weight: $__bold;
+          }
+        }
+      }
+      &-like {
+        svg {
+          cursor: pointer;
+          stroke: #000;
+          stroke-width: 40px;
+          fill: transparent;
+        }
+      }
+    }
+  }
+}
