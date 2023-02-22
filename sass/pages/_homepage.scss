@@ -146,53 +146,44 @@
             font-weight: $__bold;
           }
         }
-
-        //   i {
-        //     &::before {
-        //       width: 100%;
-        //       font-size: 1.5rem;
-        //       cursor: pointer;
-
-        //       color: transparent;
-        //       -webkit-text-stroke-width: 1px;
-        //       -webkit-text-stroke-color: #000;
-
-        //       -webkit-transition: all 1000ms linear;
-        //       transition: all 1000ms linear;
-        //     }
-
-        //     &:hover::before {
-        //       -webkit-transition: all 1000ms linear;
-        //       transition: all 1000ms linear;
-
-        //       // transform: scale(1.1);
-        //       background: linear-gradient($__primary, $__secondary);
-        //       background-size: contain;
-        //       -webkit-background-clip: text;
-        //       -webkit-text-fill-color: transparent;
-        //     }
-        //   }
       }
       &-like {
-        svg {
-          display: inline-block;
-          cursor: pointer;
-          stroke: #000;
-          stroke-width: 40px;
-          fill: transparent;
-          stop {
-            transition: stop-color 0.4s ease;
+        label {
+          input {
+            display: none;
           }
-          &:hover {
-            fill: url(#icon-like-gradient);
-            stop {
-              transition: stop-color 0.4s ease;
-              &:first-child {
-                stop-color: $__primary;
-              }
-              &:last-child {
-                stop-color: $__secondary;
-              }
+          input:checked {
+            + i::before {
+              background: linear-gradient($__primary, $__secondary);
+              background-size: contain;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+          }
+					
+          i {
+            &::before {
+              width: 100%;
+              font-size: 1.5rem;
+              cursor: pointer;
+
+              color: transparent;
+              -webkit-text-stroke-width: 1px;
+              -webkit-text-stroke-color: #000;
+
+              -webkit-transition: all 1000ms linear;
+              transition: all 1000ms linear;
+            }
+
+            &:hover::before {
+              -webkit-transition: all 1000ms linear;
+              transition: all 1000ms linear;
+
+              // transform: scale(1.1);
+              background: linear-gradient($__primary, $__secondary);
+              background-size: contain;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
             }
           }
         }

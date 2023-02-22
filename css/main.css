@@ -8680,27 +8680,32 @@ p {
 .section--restaurants-card .restaurants--card-desc-text h2 {
   font-weight: 700;
 }
-.section--restaurants-card .restaurants--card-like svg {
-  display: inline-block;
+.section--restaurants-card .restaurants--card-like label input {
+  display: none;
+}
+.section--restaurants-card .restaurants--card-like label input:checked + i::before {
+  background: linear-gradient(#9356dc, #ff79da);
+  background-size: contain;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section--restaurants-card .restaurants--card-like label i::before {
+  width: 100%;
+  font-size: 1.5rem;
   cursor: pointer;
-  stroke: #000;
-  stroke-width: 40px;
-  fill: transparent;
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  -webkit-transition: all 1000ms linear;
+  transition: all 1000ms linear;
 }
-.section--restaurants-card .restaurants--card-like svg stop {
-  transition: stop-color 0.4s ease;
-}
-.section--restaurants-card .restaurants--card-like svg:hover {
-  fill: url(#icon-like-gradient);
-}
-.section--restaurants-card .restaurants--card-like svg:hover stop {
-  transition: stop-color 0.4s ease;
-}
-.section--restaurants-card .restaurants--card-like svg:hover stop:first-child {
-  stop-color: #9356dc;
-}
-.section--restaurants-card .restaurants--card-like svg:hover stop:last-child {
-  stop-color: #ff79da;
+.section--restaurants-card .restaurants--card-like label i:hover::before {
+  -webkit-transition: all 1000ms linear;
+  transition: all 1000ms linear;
+  background: linear-gradient(#9356dc, #ff79da);
+  background-size: contain;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /*# sourceMappingURL=main.css.map */
