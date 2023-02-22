@@ -16,6 +16,10 @@ main {
   padding: 0 1rem;
 }
 
+section {
+  margin-bottom: 5rem;
+}
+
 h1 {
   font-size: 1.5rem;
   font-weight: $__bold;
@@ -31,5 +35,7 @@ h1 {
   &::after {
     @extend %fa-icon;
     @extend .fa-solid;
+
+    width: 1rem;
   }
 }

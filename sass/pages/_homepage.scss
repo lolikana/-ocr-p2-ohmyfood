@@ -35,3 +35,78 @@
     }
   }
 }
+
+.section--howto {
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    margin-top: 3rem;
+    li {
+      font-weight: $__medium;
+      position: relative;
+      @include box-shadow($__horizontaloffset: 10px, $blur: 10px, $__spread: -10px);
+      border-radius: 15px;
+      margin-left: 1rem;
+      padding: 1.5rem 2rem;
+
+      cursor: pointer;
+    }
+    li::before {
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      top: calc(50% - 0.75rem);
+      left: -1rem;
+      width: 1rem;
+      padding: 0.25rem;
+      background-color: $__primary;
+      border-radius: 50%;
+    }
+
+    li:hover {
+      @include PrimaryColor-opacity;
+      span::before {
+        color: $__primary;
+      }
+    }
+
+    li span {
+      display: flex;
+      align-items: center;
+      &::before {
+        color: $__grey500;
+        margin-right: 1.25rem;
+        font-size: 1.25rem;
+        width: 1.25rem;
+      }
+    }
+
+    li:nth-child(1) {
+      &::before {
+        content: attr(data-howto);
+      }
+      span::before {
+        content: fa-content($fa-var-mobile-screen-button);
+      }
+    }
+    li:nth-child(2) {
+      &::before {
+        content: attr(data-howto);
+      }
+      span::before {
+        content: fa-content($fa-var-list-ul);
+      }
+    }
+    li:nth-child(3) {
+      &::before {
+        content: attr(data-howto);
+      }
+      span::before {
+        content: fa-content($fa-var-store);
+      }
+    }
+  }
+}

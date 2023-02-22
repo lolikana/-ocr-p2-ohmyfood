@@ -8395,6 +8395,10 @@ main {
   padding: 0 1rem;
 }
 
+section {
+  margin-bottom: 5rem;
+}
+
 h1 {
   font-size: 1.5rem;
   font-weight: 700;
@@ -8402,6 +8406,10 @@ h1 {
 
 .font-logo {
   font-family: "Shrikhand", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.icon-solid::before, .icon-solid::after {
+  width: 1rem;
 }
 
 /** Components - UI **/
@@ -8422,10 +8430,6 @@ h1 {
   position: absolute;
   top: calc(50% - 3rem);
   right: calc(50% - 1.5rem);
-  transform: translate(50%, -50%);
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
   animation: loadingSpinner 1.5s 3 ease, rotate 1.5s 3 ease, 1s opacity 3.25s forwards;
 }
 
@@ -8533,7 +8537,6 @@ h1 {
   line-height: 1.75rem;
 }
 .footer--link:nth-child(1)::before, .footer--link:nth-child(2)::before {
-  width: 1rem;
   margin-right: 0.75rem;
 }
 .footer--link:nth-child(1)::before {
@@ -8569,6 +8572,70 @@ h1 {
 }
 .section--explore-find p {
   font-size: 1.15rem;
+}
+
+.section--howto-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+.section--howto-list li {
+  font-weight: 500;
+  position: relative;
+  -webkit-box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  margin-left: 1rem;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+}
+.section--howto-list li::before {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: calc(50% - 0.75rem);
+  left: -1rem;
+  width: 1rem;
+  padding: 0.25rem;
+  background-color: #9356dc;
+  border-radius: 50%;
+}
+.section--howto-list li:hover {
+  background-color: rgba(147, 86, 220, 0.1);
+}
+.section--howto-list li:hover span::before {
+  color: #9356dc;
+}
+.section--howto-list li span {
+  display: flex;
+  align-items: center;
+}
+.section--howto-list li span::before {
+  color: #9e9e9e;
+  margin-right: 1.25rem;
+  font-size: 1.25rem;
+  width: 1.25rem;
+}
+.section--howto-list li:nth-child(1)::before {
+  content: attr(data-howto);
+}
+.section--howto-list li:nth-child(1) span::before {
+  content: "\f3cd";
+}
+.section--howto-list li:nth-child(2)::before {
+  content: attr(data-howto);
+}
+.section--howto-list li:nth-child(2) span::before {
+  content: "\f0ca";
+}
+.section--howto-list li:nth-child(3)::before {
+  content: attr(data-howto);
+}
+.section--howto-list li:nth-child(3) span::before {
+  content: "\f54e";
 }
 
 /*# sourceMappingURL=main.css.map */
