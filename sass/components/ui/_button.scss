@@ -9,8 +9,8 @@
 
     color: #fff;
     font-weight: $__medium;
-    background: linear-gradient($__secondary, $__primary);
 
+    @include bg-linear-gradient;
     @include box-shadow;
     transition: all 150ms ease-in;
 
