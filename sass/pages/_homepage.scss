@@ -180,11 +180,9 @@
           stroke: #000;
           stroke-width: 40px;
           fill: transparent;
-
           stop {
             transition: stop-color 0.4s ease;
           }
-
           &:hover {
             fill: url(#icon-like-gradient);
             stop {
