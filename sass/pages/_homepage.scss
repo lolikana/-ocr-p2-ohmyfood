@@ -110,3 +110,81 @@
     }
   }
 }
+
+.section--restaurants {
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  &-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &-card {
+    @include box-shadow($__horizontaloffset: 10px, $blur: 10px, $__spread: -10px);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .restaurants--card {
+      &-desc {
+        padding: 1.5rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-text {
+          h2,
+          p {
+            line-height: 2rem;
+          }
+
+          h2 {
+            font-weight: $__bold;
+          }
+        }
+
+        //   i {
+        //     &::before {
+        //       width: 100%;
+        //       font-size: 1.5rem;
+        //       cursor: pointer;
+
+        //       color: transparent;
+        //       -webkit-text-stroke-width: 1px;
+        //       -webkit-text-stroke-color: #000;
+
+        //       -webkit-transition: all 1000ms linear;
+        //       transition: all 1000ms linear;
+        //     }
+
+        //     &:hover::before {
+        //       -webkit-transition: all 1000ms linear;
+        //       transition: all 1000ms linear;
+
+        //       // transform: scale(1.1);
+        //       background: linear-gradient($__primary, $__secondary);
+        //       background-size: contain;
+        //       -webkit-background-clip: text;
+        //       -webkit-text-fill-color: transparent;
+        //     }
+        //   }
+      }
+      &-like {
+        svg {
+          cursor: pointer;
+          stroke: #000;
+          stroke-width: 40px;
+          fill: transparent;
+          &:hover {
+            opacity: 1;
+            fill: url(#icon-like-gradient);
+          }
+        }
+      }
+    }
+  }
+}
