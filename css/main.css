@@ -8700,8 +8700,8 @@ p {
   position: absolute;
   left: -1.5rem;
 }
-.section--restaurants-card .restaurants--card-like label i.icon-solid::before,
-.section--restaurants-card .restaurants--card-like label i.icon-regular::before {
+.section--restaurants-card .restaurants--card-like label .icon-solid::before,
+.section--restaurants-card .restaurants--card-like label .icon-regular::before {
   width: 100%;
   font-size: 1.5rem;
   cursor: pointer;
@@ -8712,13 +8712,13 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.section--restaurants-card .restaurants--card-like label i.icon-solid::before {
+.section--restaurants-card .restaurants--card-like label .icon-solid::before {
   background-size: contain;
   transition: all 1s ease;
   background-image: linear-gradient(#ff79da, #9356dc);
   opacity: 0;
 }
-.section--restaurants-card .restaurants--card-like input:checked + i.icon-solid::before {
+.section--restaurants-card .restaurants--card-like input:checked + .icon-solid::before {
   transition: opacity 1s ease;
   opacity: 1;
 }

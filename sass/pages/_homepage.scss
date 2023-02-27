@@ -155,14 +155,12 @@
           input {
             display: none;
           }
-
           i {
             position: absolute;
             left: -1.5rem;
           }
-
-          i.icon-solid::before,
-          i.icon-regular::before {
+          .icon-solid::before,
+          .icon-regular::before {
             width: 100%;
             font-size: 1.5rem;
             cursor: pointer;
@@ -175,7 +173,7 @@
             -webkit-text-fill-color: transparent;
           }
 
-          i.icon-solid::before {
+          .icon-solid::before {
             background-size: contain;
             transition: all 1s ease;
             @include bgi-linear-gradient();
@@ -183,7 +181,7 @@
           }
         }
 
-        input:checked + i.icon-solid::before {
+        input:checked + .icon-solid::before {
           transition: opacity 1s ease;
           opacity: 1;
         }
