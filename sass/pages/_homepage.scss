@@ -149,43 +149,43 @@
       }
       &-like {
         label {
+          position: relative;
+          display: flex;
+          align-items: center;
           input {
             display: none;
           }
-          input:checked {
-            + i::before {
-              background: linear-gradient($__primary, $__secondary);
-              background-size: contain;
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-            }
-          }
-					
+
           i {
-            &::before {
-              width: 100%;
-              font-size: 1.5rem;
-              cursor: pointer;
-
-              color: transparent;
-              -webkit-text-stroke-width: 1px;
-              -webkit-text-stroke-color: #000;
-
-              -webkit-transition: all 1000ms linear;
-              transition: all 1000ms linear;
-            }
-
-            &:hover::before {
-              -webkit-transition: all 1000ms linear;
-              transition: all 1000ms linear;
-
-              // transform: scale(1.1);
-              background: linear-gradient($__primary, $__secondary);
-              background-size: contain;
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-            }
+            position: absolute;
+            left: -1.5rem;
           }
+
+          i.icon-solid::before,
+          i.icon-regular::before {
+            width: 100%;
+            font-size: 1.5rem;
+            cursor: pointer;
+
+            color: transparent;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: #000;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          i.icon-solid::before {
+            background-size: contain;
+            transition: all 1s ease;
+            @include bgi-linear-gradient();
+            opacity: 0;
+          }
+        }
+
+        input:checked + i.icon-solid::before {
+          transition: opacity 1s ease;
+          opacity: 1;
         }
       }
     }

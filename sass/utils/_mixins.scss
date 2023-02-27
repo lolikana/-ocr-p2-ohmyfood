@@ -16,6 +16,9 @@
 //   fill: linear-gradient($fillColor1, $fillColor2);
 // }
 
+@mixin bgi-linear-gradient($bgColor1: $__secondary, $bgColor2: $__primary) {
+  background-image: linear-gradient($bgColor1, $bgColor2);
+}
 @mixin bg-linear-gradient($bgColor1: $__secondary, $bgColor2: $__primary) {
   background: linear-gradient($bgColor1, $bgColor2);
 }

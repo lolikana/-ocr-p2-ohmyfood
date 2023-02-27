@@ -46,3 +46,12 @@ p {
     width: 1rem;
   }
 }
+.icon-regular {
+  &::before,
+  &::after {
+    @extend %fa-icon;
+    @extend .fa-regular;
+
+    width: 1rem;
+  }
+}

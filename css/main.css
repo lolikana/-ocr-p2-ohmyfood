@@ -18,6 +18,8 @@
 .icon-solid::after,
 .far,
 .fa-regular,
+.icon-regular::before,
+.icon-regular::after,
 .fab,
 .fa-brands {
   -moz-osx-font-smoothing: grayscale;
@@ -35,7 +37,9 @@
 .icon-solid::before,
 .icon-solid::after,
 .far,
-.fa-regular {
+.fa-regular,
+.icon-regular::before,
+.icon-regular::after {
   font-family: "Font Awesome 6 Free";
 }
 
@@ -44,7 +48,7 @@
   font-family: "Font Awesome 6 Brands";
 }
 
-.icon-solid::before, .icon-solid::after {
+.icon-regular::before, .icon-regular::after, .icon-solid::before, .icon-solid::after {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: inline-block;
@@ -8421,6 +8425,10 @@ p {
   width: 1rem;
 }
 
+.icon-regular::before, .icon-regular::after {
+  width: 1rem;
+}
+
 /** Components - UI **/
 .modal {
   z-index: 1000;
@@ -8680,32 +8688,39 @@ p {
 .section--restaurants-card .restaurants--card-desc-text h2 {
   font-weight: 700;
 }
+.section--restaurants-card .restaurants--card-like label {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
 .section--restaurants-card .restaurants--card-like label input {
   display: none;
 }
-.section--restaurants-card .restaurants--card-like label input:checked + i::before {
-  background: linear-gradient(#9356dc, #ff79da);
-  background-size: contain;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.section--restaurants-card .restaurants--card-like label i {
+  position: absolute;
+  left: -1.5rem;
 }
-.section--restaurants-card .restaurants--card-like label i::before {
+.section--restaurants-card .restaurants--card-like label i.icon-solid::before,
+.section--restaurants-card .restaurants--card-like label i.icon-regular::before {
   width: 100%;
   font-size: 1.5rem;
   cursor: pointer;
   color: transparent;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #000;
-  -webkit-transition: all 1000ms linear;
-  transition: all 1000ms linear;
-}
-.section--restaurants-card .restaurants--card-like label i:hover::before {
-  -webkit-transition: all 1000ms linear;
-  transition: all 1000ms linear;
-  background: linear-gradient(#9356dc, #ff79da);
-  background-size: contain;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.section--restaurants-card .restaurants--card-like label i.icon-solid::before {
+  background-size: contain;
+  transition: all 1s ease;
+  background-image: linear-gradient(#ff79da, #9356dc);
+  opacity: 0;
+}
+.section--restaurants-card .restaurants--card-like input:checked + i.icon-solid::before {
+  transition: opacity 1s ease;
+  opacity: 1;
 }
 
 /*# sourceMappingURL=main.css.map */
