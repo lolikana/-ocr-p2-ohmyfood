@@ -12,10 +12,6 @@
   box-shadow: $__inset $__horizontaloffset $__verticaloffset $blur $__spread $__color;
 }
 
-// @mixin fill-linear-gradient($fillColor1: $__secondary, $fillColor1: $__primary) {
-//   fill: linear-gradient($fillColor1, $fillColor2);
-// }
-
 @mixin bgi-linear-gradient($bgColor1: $__secondary, $bgColor2: $__primary) {
   background-image: linear-gradient($bgColor1, $bgColor2);
 }

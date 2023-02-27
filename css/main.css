@@ -8663,7 +8663,7 @@ p {
 }
 .section--restaurants-cards {
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
   gap: 1rem;
 }
 .section--restaurants-card {
@@ -8674,6 +8674,16 @@ p {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 350px;
+  width: 100%;
+}
+.section--restaurants-card .restaurants--card-img {
+  height: 80%;
+  overflow: hidden;
+}
+.section--restaurants-card .restaurants--card-img img {
+  height: 100%;
+  object-fit: cover;
 }
 .section--restaurants-card .restaurants--card-desc {
   padding: 1.5rem 1rem;
@@ -8714,12 +8724,12 @@ p {
 }
 .section--restaurants-card .restaurants--card-like label .icon-solid::before {
   background-size: contain;
-  transition: all 1s ease;
+  transition: all 500ms ease;
   background-image: linear-gradient(#ff79da, #9356dc);
   opacity: 0;
 }
 .section--restaurants-card .restaurants--card-like input:checked + .icon-solid::before {
-  transition: opacity 1s ease;
+  transition: opacity 500ms ease;
   opacity: 1;
 }
 

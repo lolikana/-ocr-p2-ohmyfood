@@ -118,7 +118,7 @@
 
   &-cards {
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
     gap: 1rem;
   }
 
@@ -128,8 +128,20 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    height: 350px;
+    width: 100%;
 
     .restaurants--card {
+      &-img {
+        height: 80%;
+        overflow: hidden;
+
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
       &-desc {
         padding: 1.5rem 1rem;
         display: flex;
@@ -175,14 +187,14 @@
 
           .icon-solid::before {
             background-size: contain;
-            transition: all 1s ease;
+            transition: all 500ms ease;
             @include bgi-linear-gradient();
             opacity: 0;
           }
         }
 
         input:checked + .icon-solid::before {
-          transition: opacity 1s ease;
+          transition: opacity 500ms ease;
           opacity: 1;
         }
       }
