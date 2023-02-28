@@ -8802,5 +8802,12 @@ p {
     background-position: 0% 51%;
   }
 }
+.header a {
+  position: absolute;
+  left: 2rem;
+}
+.header a i {
+  font-size: 1.5rem;
+}
 
 /*# sourceMappingURL=main.css.map */
