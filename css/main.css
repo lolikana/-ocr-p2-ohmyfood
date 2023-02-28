@@ -8700,6 +8700,7 @@ p {
   gap: 1rem;
 }
 .section--restaurants-card {
+  position: relative;
   -webkit-box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
   box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
@@ -8719,6 +8720,20 @@ p {
   .section--restaurants-card {
     flex: 20%;
   }
+}
+.section--restaurants-card .restaurants-card-new {
+  position: absolute;
+  padding: 0.25rem 0.5rem;
+  top: 1rem;
+  right: 1rem;
+  color: #245729;
+  background: linear-gradient(90deg, #32eebd, #26c39a, #2aad8a);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 2s ease-in-out infinite alternate;
+  animation: gradient 2s ease-in-out infinite alternate;
+}
+.section--restaurants-card .restaurants-card-new::after {
+  content: "New";
 }
 .section--restaurants-card .restaurants--card-img {
   height: 80%;
@@ -8774,6 +8789,18 @@ p {
 .section--restaurants-card .restaurants--card-like input:checked + .icon-solid::before {
   transition: opacity 500ms ease;
   opacity: 1;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 51%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 51%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

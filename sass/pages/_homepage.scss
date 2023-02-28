@@ -133,6 +133,7 @@
   }
 
   &-card {
+    position: relative;
     @include box-shadow($__horizontaloffset: 10px, $blur: 10px, $__spread: -10px);
     border-radius: 10px;
     overflow: hidden;
@@ -146,6 +147,22 @@
     }
     @include mq(desktop) {
       flex: 20%;
+    }
+
+    .restaurants-card-new {
+      position: absolute;
+      padding: 0.25rem 0.5rem;
+      top: 1rem;
+      right: 1rem;
+      color: #245729;
+      background: linear-gradient(90deg, #32eebd, #26c39a, #2aad8a);
+      background-size: 400% 400%;
+      -webkit-animation: gradient 2s ease-in-out infinite alternate;
+      animation: gradient 2s ease-in-out infinite alternate;
+
+      &::after {
+        content: 'New';
+      }
     }
 
     .restaurants--card {
@@ -216,5 +233,17 @@
         }
       }
     }
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 51%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 51%;
   }
 }
