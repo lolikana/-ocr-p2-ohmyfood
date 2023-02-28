@@ -51,12 +51,11 @@
     li {
       font-weight: $__medium;
       position: relative;
-      @include box-shadow($__horizontaloffset: 10px, $blur: 10px, $__spread: -10px);
-      border-radius: 15px;
-      margin-left: 1rem;
+
+      @extend %card-shadow-radius;
       padding: 1.5rem 2rem;
 
-      cursor: pointer;
+      margin-left: 1rem;
 
       @include mq(tablet) {
         align-self: center;
@@ -191,45 +190,6 @@
           h2 {
             font-weight: $__bold;
           }
-        }
-      }
-      &-like {
-        label {
-          position: relative;
-          display: flex;
-          align-items: center;
-          input {
-            display: none;
-          }
-          i {
-            position: absolute;
-            left: -1.5rem;
-          }
-          .icon-solid::before,
-          .icon-regular::before {
-            width: 100%;
-            font-size: 1.5rem;
-            cursor: pointer;
-
-            color: transparent;
-            -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: #000;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-          }
-
-          .icon-solid::before {
-            background-size: contain;
-            transition: all 500ms ease;
-            @include bgi-linear-gradient();
-            opacity: 0;
-          }
-        }
-
-        input:checked + .icon-solid::before {
-          transition: opacity 500ms ease;
-          opacity: 1;
         }
       }
     }

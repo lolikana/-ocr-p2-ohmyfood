@@ -8271,6 +8271,14 @@ readers do not read off random characters that represent icons */
 }
 
 /** Utils **/
+.menu--cards .menu--card, .section--howto-list li {
+  -webkit-box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
 /** Base **/
 * {
   box-sizing: border-box;
@@ -8407,7 +8415,7 @@ h1 {
   font-weight: 700;
 }
 
-h2 {
+h2, h3 {
   font-size: 1.25rem;
   font-weight: 700;
 }
@@ -8526,6 +8534,41 @@ p {
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.3);
 }
 
+.icon-like label {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.icon-like label input {
+  display: none;
+}
+.icon-like label i {
+  position: absolute;
+  left: -1.5rem;
+}
+.icon-like label .icon-solid::before,
+.icon-like label .icon-regular::before {
+  width: 100%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.icon-like label .icon-solid::before {
+  background-size: contain;
+  transition: all 500ms ease;
+  background-image: linear-gradient(#ff79da, #9356dc);
+  opacity: 0;
+}
+.icon-like input:checked + .icon-solid::before {
+  transition: opacity 500ms ease;
+  opacity: 1;
+}
+
 /** Components **/
 .header {
   display: flex;
@@ -8631,13 +8674,8 @@ p {
 .section--howto-list li {
   font-weight: 500;
   position: relative;
-  -webkit-box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
-  box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
-  border-radius: 15px;
-  margin-left: 1rem;
   padding: 1.5rem 2rem;
-  cursor: pointer;
+  margin-left: 1rem;
 }
 @media only screen and (min-width: 768px) {
   .section--howto-list li {
@@ -8757,40 +8795,6 @@ p {
 .section--restaurants-card .restaurants--card-desc-text h2 {
   font-weight: 700;
 }
-.section--restaurants-card .restaurants--card-like label {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.section--restaurants-card .restaurants--card-like label input {
-  display: none;
-}
-.section--restaurants-card .restaurants--card-like label i {
-  position: absolute;
-  left: -1.5rem;
-}
-.section--restaurants-card .restaurants--card-like label .icon-solid::before,
-.section--restaurants-card .restaurants--card-like label .icon-regular::before {
-  width: 100%;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #000;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.section--restaurants-card .restaurants--card-like label .icon-solid::before {
-  background-size: contain;
-  transition: all 500ms ease;
-  background-image: linear-gradient(#ff79da, #9356dc);
-  opacity: 0;
-}
-.section--restaurants-card .restaurants--card-like input:checked + .icon-solid::before {
-  transition: opacity 500ms ease;
-  opacity: 1;
-}
 
 @keyframes gradient {
   0% {
@@ -8817,11 +8821,77 @@ p {
 
 .section--menu {
   padding: 0 1rem;
+  height: 100%;
 }
 
-.menu--topImg {
+.menu--top {
+  position: relative;
   width: 100%;
+  height: 30%;
   object-fit: cover;
+  margin-bottom: -3rem;
+  overflow: hidden;
+}
+
+.section--menu {
+  position: relative;
+  height: 100%;
+  padding-top: 3rem;
+  background-color: #fff;
+  border-radius: 30px 30px 0 0;
+}
+.section--menu .menu--name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 3rem;
+}
+.section--menu article h2 {
+  text-transform: uppercase;
+  font-weight: 300;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.section--menu article h2::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 55px;
+  height: 4px;
+  background-color: #99e2d0;
+}
+.section--menu article:nth-of-type(2) h2 {
+  margin-left: 2rem;
+}
+
+.menu--cards {
+  margin: 1rem 0 2rem;
+}
+.menu--cards .menu--card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+.menu--cards .menu--card-text {
+  overflow: hidden;
+}
+.menu--cards .menu--card-title, .menu--cards .menu--card-subTitle {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu--cards .menu--card-title {
+  margin-bottom: 0.5rem;
+}
+.menu--cards .menu--card-price {
+  align-self: flex-end;
+  font-weight: 500;
+  margin-left: 1rem;
 }
 
 /*# sourceMappingURL=main.css.map */

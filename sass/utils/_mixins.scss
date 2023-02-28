@@ -39,3 +39,9 @@ $breakpoints: (
 @mixin PrimaryColor-opacity($__opacity: 0.1) {
   background-color: rgba(147, 86, 220, $__opacity);
 }
+
+%card-shadow-radius {
+  @include box-shadow($__horizontaloffset: 10px, $blur: 10px, $__spread: -10px);
+  border-radius: 15px;
+  cursor: pointer;
+}

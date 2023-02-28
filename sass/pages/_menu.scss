@@ -15,11 +15,88 @@
 
 .section--menu {
   padding: 0 1rem;
+  height: 100%;
 }
 
-.menu {
-  &--topImg {
-    width: 100%;
-    object-fit: cover;
+.menu--top {
+  position: relative;
+  width: 100%;
+  height: 30%;
+  object-fit: cover;
+  margin-bottom: -3rem;
+  overflow: hidden;
+}
+
+.section--menu {
+  position: relative;
+  height: 100%;
+  padding-top: 3rem;
+  background-color: #fff;
+  border-radius: 30px 30px 0 0;
+  .menu {
+    &--name {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  article {
+    h2 {
+      text-transform: uppercase;
+      font-weight: $__light;
+      position: relative;
+      margin-bottom: 1rem;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -0.5rem;
+        left: 0;
+        width: 55px;
+        height: 4px;
+        background-color: $__tertiary;
+      }
+    }
+    &:nth-of-type(2) {
+      h2 {
+        margin-left: 2rem;
+      }
+    }
+  }
+}
+
+.menu--cards {
+  margin: 1rem 0 2rem;
+  .menu {
+    &--card {
+      @extend %card-shadow-radius;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1rem;
+
+      margin-bottom: 1rem;
+
+      &-text {
+        overflow: hidden;
+      }
+      &-title,
+      &-subTitle {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      &-title {
+        margin-bottom: 0.5rem;
+      }
+      &-price {
+        align-self: flex-end;
+        font-weight: $__medium;
+        margin-left: 1rem;
+      }
+    }
   }
 }
