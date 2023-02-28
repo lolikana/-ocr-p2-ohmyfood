@@ -8565,6 +8565,28 @@ p {
 .footer--link:nth-child(2)::before {
   content: "\f4c4";
 }
+@media only screen and (min-width: 768px) {
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  .footer--links {
+    display: flex;
+    gap: 2rem;
+    margin-top: 0;
+  }
+  .footer--link::before {
+    vertical-align: baseline;
+  }
+  .footer--link:nth-child(1)::before {
+    margin-right: 0.3rem;
+  }
+  .footer--link:nth-child(2)::before {
+    margin-right: 0.5rem;
+  }
+}
 
 /** Pages **/
 .section--explore-current {
@@ -8594,6 +8616,11 @@ p {
   font-size: 1.15rem;
 }
 
+@media only screen and (min-width: 768px) {
+  .section--howto h1 {
+    text-align: center;
+  }
+}
 .section--howto-list {
   display: flex;
   flex-direction: column;
@@ -8610,6 +8637,12 @@ p {
   margin-left: 1rem;
   padding: 1.5rem 2rem;
   cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+  .section--howto-list li {
+    align-self: center;
+    width: 500px;
+  }
 }
 .section--howto-list li::before {
   color: #fff;
@@ -8676,6 +8709,16 @@ p {
   flex-direction: column;
   height: 350px;
   width: 100%;
+}
+@media only screen and (min-width: 900px) {
+  .section--restaurants-card {
+    flex: 40%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .section--restaurants-card {
+    flex: 20%;
+  }
 }
 .section--restaurants-card .restaurants--card-img {
   height: 80%;
