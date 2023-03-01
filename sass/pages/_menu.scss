@@ -78,6 +78,9 @@
         &:nth-of-type(2) {
           h2 {
             margin-left: 2rem;
+            @include mq(desktop) {
+              margin-left: 0;
+            }
           }
         }
       }
@@ -93,6 +96,10 @@
     padding: 0.5rem 1rem;
     margin-bottom: 1rem;
     overflow: hidden;
+
+    @include mq(desktop) {
+      width: 400px;
+    }
   }
   .menu--card-label {
     display: flex;

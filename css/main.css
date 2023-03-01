@@ -8890,6 +8890,11 @@ p {
 .section--menu .menu--carte article:nth-of-type(2) h2 {
   margin-left: 2rem;
 }
+@media only screen and (width >= 1280px) {
+  .section--menu .menu--carte article:nth-of-type(2) h2 {
+    margin-left: 0;
+  }
+}
 
 .menu--cards {
   margin: 2rem 0 3rem;
@@ -8898,6 +8903,11 @@ p {
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   overflow: hidden;
+}
+@media only screen and (width >= 1280px) {
+  .menu--cards .menu--card {
+    width: 400px;
+  }
 }
 .menu--cards .menu--card-label {
   display: flex;
