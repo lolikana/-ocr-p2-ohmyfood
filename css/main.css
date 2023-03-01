@@ -8609,7 +8609,7 @@ p {
 .footer--link:nth-child(2)::before {
   content: "\f4c4";
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (width >= 768px) {
   .footer {
     display: flex;
     justify-content: center;
@@ -8660,7 +8660,7 @@ p {
   font-size: 1.15rem;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (width >= 768px) {
   .section--howto h1 {
     text-align: center;
   }
@@ -8677,7 +8677,7 @@ p {
   padding: 1.5rem 2rem;
   margin-left: 1rem;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (width >= 768px) {
   .section--howto-list li {
     align-self: center;
     width: 500px;
@@ -8750,12 +8750,12 @@ p {
   height: 350px;
   width: 100%;
 }
-@media only screen and (min-width: 900px) {
+@media only screen and (width >= 900px) {
   .section--restaurants-card {
     flex: 40%;
   }
 }
-@media only screen and (min-width: 1280px) {
+@media only screen and (width >= 1280px) {
   .section--restaurants-card {
     flex: 20%;
   }
@@ -8847,6 +8847,10 @@ p {
   gap: 4rem;
   margin-bottom: 3rem;
 }
+.section--menu article {
+  /** Categories title **/
+  /** "Mains" title **/
+}
 .section--menu article h2 {
   text-transform: uppercase;
   font-weight: 300;
@@ -8870,28 +8874,79 @@ p {
   margin: 1rem 0 2rem;
 }
 .menu--cards .menu--card {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.menu--cards .menu--card-label {
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+}
+.menu--cards .menu--card-label input {
+  display: none;
+}
+.menu--cards .menu--card-desc {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
+  width: 100%;
 }
-.menu--cards .menu--card-text {
+.menu--cards .menu--card-desc .desc--text {
   overflow: hidden;
 }
-.menu--cards .menu--card-title, .menu--cards .menu--card-subTitle {
+.menu--cards .menu--card-desc .desc--text-title, .menu--cards .menu--card-desc .desc--text-subTitle {
   display: block;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.menu--cards .menu--card-title {
+.menu--cards .menu--card-desc .desc--text-title {
   margin-bottom: 0.5rem;
 }
-.menu--cards .menu--card-price {
+.menu--cards .menu--card-desc .desc--price {
   align-self: flex-end;
   font-weight: 500;
   margin-left: 1rem;
 }
+
+/** Checkbox  menu  START **/
+.menu--card-check {
+  background-color: #99e2d0;
+  width: 0rem;
+  margin: -0.5rem -1rem -0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu--card-check i::before {
+  color: #fff;
+  width: 1.5rem;
+  font-size: 1.5rem;
+  transform: rotate(360deg);
+}
+
+.menu--card-desc,
+.menu--card-check,
+i::before {
+  transition: all 500ms ease;
+}
+
+.menu--card-label input:checked + .menu--card-desc,
+.menu--card-label input:checked ~ .menu--card-check,
+.menu--card-label input:checked i::before {
+  transition: all 500ms ease;
+}
+.menu--card-label input:checked + .menu--card-desc {
+  width: calc(100% - 4rem);
+}
+.menu--card-label input:checked ~ .menu--card-check {
+  width: 4rem;
+}
+.menu--card-label input:checked ~ .menu--card-check i::before {
+  transform: rotate(0deg);
+}
+
+/** Checkbox  menu  END **/
 
 /*# sourceMappingURL=main.css.map */
