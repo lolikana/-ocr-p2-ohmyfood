@@ -49,7 +49,6 @@
       text-transform: uppercase;
       font-weight: $__light;
       position: relative;
-      margin-bottom: 1rem;
       &::after {
         content: '';
         position: absolute;
@@ -70,7 +69,7 @@
 }
 
 .menu--cards {
-  margin: 1rem 0 2rem;
+  margin: 2rem 0 3rem;
 
   .menu--card {
     @extend %card-shadow-radius;
