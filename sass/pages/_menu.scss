@@ -15,6 +15,7 @@
 
 .section--menu {
   padding: 0 1rem;
+  margin: 0;
   height: 100%;
 }
 
@@ -151,3 +152,9 @@ i::before {
   }
 }
 /** Checkbox  menu  END **/
+
+.menu--order-btn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}

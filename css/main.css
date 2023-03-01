@@ -8534,6 +8534,10 @@ p {
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.3);
 }
 
+.btn-order {
+  padding: 1rem 3rem;
+}
+
 .icon-like label {
   position: relative;
   display: flex;
@@ -8821,6 +8825,7 @@ p {
 
 .section--menu {
   padding: 0 1rem;
+  margin: 0;
   height: 100%;
 }
 
@@ -8947,5 +8952,10 @@ i::before {
 }
 
 /** Checkbox  menu  END **/
+.menu--order-btn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
 
 /*# sourceMappingURL=main.css.map */
