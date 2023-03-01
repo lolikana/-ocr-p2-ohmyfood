@@ -8857,16 +8857,28 @@ p {
   gap: 4rem;
   margin-bottom: 3rem;
 }
-.section--menu article {
+.section--menu .menu--carte {
+  margin: 0 auto;
+  max-width: 600px;
+}
+@media only screen and (width >= 1280px) {
+  .section--menu .menu--carte {
+    display: flex;
+    justify-content: center;
+    gap: calc(1rem + 3 * (100vw - 1280px) / 320);
+    max-width: 100%;
+  }
+}
+.section--menu .menu--carte article {
   /** Categories title **/
   /** "Mains" title **/
 }
-.section--menu article h2 {
+.section--menu .menu--carte article h2 {
   text-transform: uppercase;
   font-weight: 300;
   position: relative;
 }
-.section--menu article h2::after {
+.section--menu .menu--carte article h2::after {
   content: "";
   position: absolute;
   bottom: -0.5rem;
@@ -8875,7 +8887,7 @@ p {
   height: 4px;
   background-color: #99e2d0;
 }
-.section--menu article:nth-of-type(2) h2 {
+.section--menu .menu--carte article:nth-of-type(2) h2 {
   margin-left: 2rem;
 }
 

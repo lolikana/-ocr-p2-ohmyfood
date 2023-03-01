@@ -39,6 +39,7 @@
   padding-top: 3rem;
   background-color: #fff;
   border-radius: 30px 30px 0 0;
+
   .menu {
     &--name {
       display: flex;
@@ -47,28 +48,38 @@
       gap: 4rem;
       margin-bottom: 3rem;
     }
-  }
-
-  article {
-    /** Categories title **/
-    h2 {
-      text-transform: uppercase;
-      font-weight: $__light;
-      position: relative;
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -0.5rem;
-        left: 0;
-        width: 55px;
-        height: 4px;
-        background-color: $__tertiary;
+    &--carte {
+      margin: 0 auto;
+      max-width: 600px;
+      @include mq(desktop) {
+        display: flex;
+        justify-content: center;
+        gap: calc(1rem + (4 - 1) * ((100vw - 1280px) / (1600 - 1280)));
+        max-width: 100%;
       }
-    }
-    /** "Mains" title **/
-    &:nth-of-type(2) {
-      h2 {
-        margin-left: 2rem;
+
+      article {
+        /** Categories title **/
+        h2 {
+          text-transform: uppercase;
+          font-weight: $__light;
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 55px;
+            height: 4px;
+            background-color: $__tertiary;
+          }
+        }
+        /** "Mains" title **/
+        &:nth-of-type(2) {
+          h2 {
+            margin-left: 2rem;
+          }
+        }
       }
     }
   }
