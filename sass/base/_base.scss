@@ -13,6 +13,9 @@ header {
 main {
   height: 100%;
   padding: 0 1rem;
+  margin: 0 auto;
+  min-width: 375px;
+  max-width: 1600px;
 }
 
 section {
@@ -23,7 +26,8 @@ h1 {
   font-size: 1.5rem;
   font-weight: $__bold;
 }
-h2, h3 {
+h2,
+h3 {
   font-size: 1.25rem;
   font-weight: $__bold;
 }
