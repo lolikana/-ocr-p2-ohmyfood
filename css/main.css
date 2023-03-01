@@ -8675,17 +8675,32 @@ p {
   gap: 3rem;
   margin-top: 3rem;
 }
+@media only screen and (width >= 768px) {
+  .section--howto-list {
+    align-items: center;
+    gap: 1rem;
+  }
+  .section--howto-list li {
+    width: 60%;
+    max-width: 500px;
+  }
+}
+@media only screen and (width >= 900px) {
+  .section--howto-list {
+    flex-direction: row;
+    justify-content: center;
+    gap: calc(1rem + 3 * (100vw - 900px) / 700);
+  }
+  .section--howto-list li {
+    width: 100%;
+    max-width: 300px;
+  }
+}
 .section--howto-list li {
   font-weight: 500;
   position: relative;
   padding: 1.5rem 2rem;
   margin-left: 1rem;
-}
-@media only screen and (width >= 768px) {
-  .section--howto-list li {
-    align-self: center;
-    width: 500px;
-  }
 }
 .section--howto-list li::before {
   color: #fff;
