@@ -4,6 +4,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-width: 375px;
 }
 
 header {
@@ -11,11 +12,12 @@ header {
 }
 
 main {
-  height: 100%;
+  min-height: 100vh;
   padding: 0 1rem;
-  margin: 0 auto;
-  min-width: 375px;
-  max-width: 1600px;
+  @include mq(custom1600) {
+    width: 1600px;
+    margin: 0 auto;
+  }
 }
 
 section {

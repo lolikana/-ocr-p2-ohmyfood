@@ -8395,6 +8395,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-width: 375px;
 }
 
 header {
@@ -8402,11 +8403,14 @@ header {
 }
 
 main {
-  height: 100%;
+  min-height: 100vh;
   padding: 0 1rem;
-  margin: 0 auto;
-  min-width: 375px;
-  max-width: 1600px;
+}
+@media only screen and (width >= 1600px) {
+  main {
+    width: 1600px;
+    margin: 0 auto;
+  }
 }
 
 section {
@@ -8840,9 +8844,11 @@ p {
     background-position: 0% 51%;
   }
 }
+.header {
+  justify-content: center;
+}
 .header a {
-  position: absolute;
-  left: 2rem;
+  margin-left: 2rem;
 }
 .header a i {
   font-size: 1.5rem;
