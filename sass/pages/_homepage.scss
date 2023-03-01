@@ -139,74 +139,83 @@
     margin-bottom: 2rem;
   }
 
-  &-cards {
+  .restaurants--cards {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
     gap: 1rem;
+
+    article {
+      width: 100%;
+    }
   }
 
-  &-card {
+  article {
     position: relative;
     @include box-shadow($__horizontaloffset: 10px, $blur: 10px, $__spread: -10px);
     border-radius: 10px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    height: 350px;
-    width: 100%;
 
     @include mq(custom900) {
       flex: 40%;
     }
     @include mq(desktop) {
       flex: 20%;
+      max-width: 350px;
     }
+  }
+}
 
-    .restaurants-card-new {
-      position: absolute;
-      padding: 0.25rem 0.5rem;
-      top: 1rem;
-      right: 1rem;
-      color: #245729;
-      background: linear-gradient(90deg, #32eebd, #26c39a, #2aad8a);
-      background-size: 400% 400%;
-      -webkit-animation: gradient 2s ease-in-out infinite alternate;
-      animation: gradient 2s ease-in-out infinite alternate;
+.restaurants--card {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  width: 100%;
+}
 
-      &::after {
-        content: 'New';
+.restaurants--card {
+  &-img {
+    height: 80%;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-desc {
+    padding: 1.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-text {
+      h2,
+      p {
+        line-height: 2rem;
+      }
+
+      h2 {
+        font-weight: $__bold;
       }
     }
+  }
+}
 
-    .restaurants--card {
-      &-img {
-        height: 80%;
-        overflow: hidden;
+.restaurants--card-new {
+  position: absolute;
+  padding: 0.25rem 0.5rem;
+  top: 1rem;
+  right: 1rem;
+  color: #245729;
+  background: linear-gradient(90deg, #32eebd, #26c39a, #2aad8a);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 2s ease-in-out infinite alternate;
+  animation: gradient 2s ease-in-out infinite alternate;
 
-        img {
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-
-      &-desc {
-        padding: 1.5rem 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        &-text {
-          h2,
-          p {
-            line-height: 2rem;
-          }
-
-          h2 {
-            font-weight: $__bold;
-          }
-        }
-      }
-    }
+  &::after {
+    content: 'New';
   }
 }
 

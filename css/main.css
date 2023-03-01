@@ -8752,34 +8752,65 @@ p {
 .section--restaurants h1 {
   margin-bottom: 2rem;
 }
-.section--restaurants-cards {
+.section--restaurants .restaurants--cards {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
   gap: 1rem;
 }
-.section--restaurants-card {
+.section--restaurants .restaurants--cards article {
+  width: 100%;
+}
+.section--restaurants article {
   position: relative;
   -webkit-box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
   box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   overflow: hidden;
+}
+@media only screen and (width >= 900px) {
+  .section--restaurants article {
+    flex: 40%;
+  }
+}
+@media only screen and (width >= 1280px) {
+  .section--restaurants article {
+    flex: 20%;
+    max-width: 350px;
+  }
+}
+
+.restaurants--card {
   display: flex;
   flex-direction: column;
   height: 350px;
   width: 100%;
 }
-@media only screen and (width >= 900px) {
-  .section--restaurants-card {
-    flex: 40%;
-  }
+
+.restaurants--card-img {
+  height: 80%;
+  overflow: hidden;
 }
-@media only screen and (width >= 1280px) {
-  .section--restaurants-card {
-    flex: 20%;
-  }
+.restaurants--card-img img {
+  height: 100%;
+  object-fit: cover;
 }
-.section--restaurants-card .restaurants-card-new {
+.restaurants--card-desc {
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.restaurants--card-desc-text h2,
+.restaurants--card-desc-text p {
+  line-height: 2rem;
+}
+.restaurants--card-desc-text h2 {
+  font-weight: 700;
+}
+
+.restaurants--card-new {
   position: absolute;
   padding: 0.25rem 0.5rem;
   top: 1rem;
@@ -8790,29 +8821,8 @@ p {
   -webkit-animation: gradient 2s ease-in-out infinite alternate;
   animation: gradient 2s ease-in-out infinite alternate;
 }
-.section--restaurants-card .restaurants-card-new::after {
+.restaurants--card-new::after {
   content: "New";
-}
-.section--restaurants-card .restaurants--card-img {
-  height: 80%;
-  overflow: hidden;
-}
-.section--restaurants-card .restaurants--card-img img {
-  height: 100%;
-  object-fit: cover;
-}
-.section--restaurants-card .restaurants--card-desc {
-  padding: 1.5rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.section--restaurants-card .restaurants--card-desc-text h2,
-.section--restaurants-card .restaurants--card-desc-text p {
-  line-height: 2rem;
-}
-.section--restaurants-card .restaurants--card-desc-text h2 {
-  font-weight: 700;
 }
 
 @keyframes gradient {
