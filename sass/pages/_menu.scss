@@ -1,7 +1,12 @@
 .header {
   justify-content: center;
-  a {
-    margin-left: 2rem;
+  &--backhome {
+    position: absolute;
+    left: 2rem;
+
+    @include mq(custom1600) {
+      left: calc(50% - 9rem);
+    }
     i {
       font-size: 1.5rem;
     }

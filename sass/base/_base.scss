@@ -12,7 +12,6 @@ header {
 }
 
 main {
-  min-height: 100vh;
   padding: 0 1rem;
   @include mq(custom1600) {
     width: 1600px;

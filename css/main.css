@@ -8403,7 +8403,6 @@ header {
 }
 
 main {
-  min-height: 100vh;
   padding: 0 1rem;
 }
 @media only screen and (width >= 1600px) {
@@ -8652,7 +8651,7 @@ p {
   align-items: center;
   color: #424242;
   font-weight: 500;
-  margin: 0 -1rem;
+  margin: 0 -100%;
   background-color: #e0e0e0;
 }
 .section--explore-city::before {
@@ -8763,7 +8762,7 @@ p {
 .section--restaurants .restaurants--cards {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem;
 }
 .section--restaurants .restaurants--cards article {
@@ -8785,7 +8784,6 @@ p {
 @media only screen and (width >= 1280px) {
   .section--restaurants article {
     flex: 20%;
-    max-width: 350px;
   }
 }
 
@@ -8847,10 +8845,16 @@ p {
 .header {
   justify-content: center;
 }
-.header a {
-  margin-left: 2rem;
+.header--backhome {
+  position: absolute;
+  left: 2rem;
 }
-.header a i {
+@media only screen and (width >= 1600px) {
+  .header--backhome {
+    left: calc(50% - 9rem);
+  }
+}
+.header--backhome i {
   font-size: 1.5rem;
 }
 
