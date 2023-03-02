@@ -71,7 +71,7 @@
       font-weight: $__medium;
       position: relative;
 
-      @extend %card-shadow-radius;
+      @extend %card-shadow-radius-hover;
       padding: 1.5rem 2rem;
 
       margin-left: 1rem;
@@ -152,8 +152,7 @@
 
   article {
     position: relative;
-    @include box-shadow($__horizontaloffset: 10px, $blur: 10px, $__spread: -10px);
-    border-radius: 10px;
+    @extend %card-shadow-radius-hover;
     overflow: hidden;
 
     @include mq(custom900) {

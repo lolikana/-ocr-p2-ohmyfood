@@ -17,10 +17,10 @@ $breakpoints: (
 
 @mixin box-shadow(
   $__inset: null,
-  $__horizontaloffset: 0px,
-  $__verticaloffset: 5px,
-  $blur: 15px,
-  $__spread: 0px,
+  $__horizontaloffset: 10px,
+  $__verticaloffset: 10px,
+  $blur: 10px,
+  $__spread: -8px,
   $__color: rgba(0, 0, 0, 0.3)
 ) {
   -webkit-box-shadow: $__inset $__horizontaloffset $__verticaloffset $blur $__spread
@@ -40,8 +40,21 @@ $breakpoints: (
   background-color: rgba(147, 86, 220, $__opacity);
 }
 
-%card-shadow-radius {
-  @include box-shadow($__horizontaloffset: 10px, $blur: 10px, $__spread: -10px);
-  border-radius: 15px;
+%card-shadow {
+  @include box-shadow();
   cursor: pointer;
+}
+%card-radius {
+  border-radius: 15px;
+}
+%card-shadow-radius-hover {
+  @extend %card-shadow;
+  @extend %card-radius;
+
+  transition: all 250ms ease;
+  &:hover {
+    transition: all 250ms ease;
+    transform: scale(1.005);
+    @include box-shadow($__spread: -5px);
+  }
 }

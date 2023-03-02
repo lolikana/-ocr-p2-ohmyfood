@@ -8271,12 +8271,26 @@ readers do not read off random characters that represent icons */
 }
 
 /** Utils **/
-.menu--cards .menu--card, .section--howto-list li {
-  -webkit-box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
-  box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
-  border-radius: 15px;
+.menu--cards .menu--card, .section--restaurants article, .section--howto-list li {
+  -webkit-box-shadow: 10px 10px 10px -8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 10px 10px 10px -8px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 10px -8px rgba(0, 0, 0, 0.3);
   cursor: pointer;
+}
+
+.menu--cards .menu--card, .section--restaurants article, .section--howto-list li {
+  border-radius: 15px;
+}
+
+.section--restaurants article, .section--howto-list li {
+  transition: all 250ms ease;
+}
+.section--restaurants article:hover, .section--howto-list li:hover {
+  transition: all 250ms ease;
+  transform: scale(1.005);
+  -webkit-box-shadow: 10px 10px 10px -5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 10px 10px 10px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 10px -5px rgba(0, 0, 0, 0.3);
 }
 
 /** Base **/
@@ -8546,18 +8560,18 @@ p {
   color: #fff;
   font-weight: 500;
   background: linear-gradient(#ff79da, #9356dc);
-  -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 10px 10px 10px -8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 10px 10px 10px -8px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 10px -8px rgba(0, 0, 0, 0.3);
   transition: all 150ms ease-in;
 }
 .btn-main:hover {
   transition: all 150ms ease-out;
   opacity: 0.95;
   bottom: 0.05rem;
-  -webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 10px 10px 20px -8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 10px 10px 20px -8px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 20px -8px rgba(0, 0, 0, 0.3);
 }
 
 .btn-order {
@@ -8789,10 +8803,6 @@ p {
 }
 .section--restaurants article {
   position: relative;
-  -webkit-box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
-  box-shadow: 10px 5px 10px -10px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
   overflow: hidden;
 }
 @media only screen and (width >= 900px) {
@@ -8956,7 +8966,6 @@ p {
   margin: 2rem 0 3rem;
 }
 .menu--cards .menu--card {
-  padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   overflow: hidden;
 }
@@ -8967,7 +8976,9 @@ p {
 }
 .menu--cards .menu--card-label {
   display: flex;
+  padding: 0.5rem 1rem;
   width: 100%;
+  height: 100%;
   cursor: pointer;
 }
 .menu--cards .menu--card-label input {
