@@ -8880,7 +8880,7 @@ p {
 }
 @media only screen and (width >= 1600px) {
   .header--backhome {
-    left: calc(50% - 9rem);
+    left: calc(50% - 800px + 2rem);
   }
 }
 .header--backhome i {
