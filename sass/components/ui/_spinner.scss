@@ -30,14 +30,14 @@
   /** disabled scrolling on modal END **/
 
   &--spinner {
-    font-size: 3rem;
+    font-size: 4rem;
     overflow: hidden;
     width: 1em;
     height: 1em;
     border-radius: 50%;
     position: fixed;
-    top: calc(50% - 3rem);
-    right: calc(50% - 1.5rem);
+    top: calc(50%);
+    right: calc(50% - 2rem);
     animation: loadingSpinner 1.5s 3 ease, rotate 1.5s 3 ease, 1s opacity 3.25s forwards;
   }
   animation: 1s closeModal 3.25s forwards;

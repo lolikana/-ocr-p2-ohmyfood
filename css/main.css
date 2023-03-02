@@ -8488,14 +8488,14 @@ p {
   display: none;
 }
 .modal--spinner {
-  font-size: 3rem;
+  font-size: 4rem;
   overflow: hidden;
   width: 1em;
   height: 1em;
   border-radius: 50%;
   position: fixed;
-  top: calc(50% - 3rem);
-  right: calc(50% - 1.5rem);
+  top: 50%;
+  right: calc(50% - 2rem);
   animation: loadingSpinner 1.5s 3 ease, rotate 1.5s 3 ease, 1s opacity 3.25s forwards;
 }
 
