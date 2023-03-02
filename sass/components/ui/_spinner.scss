@@ -9,13 +9,33 @@
 
   background-color: rgba(0, 0, 0, 0.3);
 
+  /** disabled scrolling on modal START **/
+  /*** body scroll still accessible ***/
+  overscroll-behavior: contain;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  touch-action: none;
+
+  &::before,
+  &::after {
+    content: '';
+    width: 1px;
+    height: calc(100vh + 1px);
+    display: flex;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  /** disabled scrolling on modal END **/
+
   &--spinner {
     font-size: 3rem;
     overflow: hidden;
     width: 1em;
     height: 1em;
     border-radius: 50%;
-    position: absolute;
+    position: fixed;
     top: calc(50% - 3rem);
     right: calc(50% - 1.5rem);
     animation: loadingSpinner 1.5s 3 ease, rotate 1.5s 3 ease, 1s opacity 3.25s forwards;
